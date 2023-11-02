@@ -37,7 +37,7 @@ const Tab1: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Lista de poke-balls</IonTitle>
+          <IonTitle>Poké-balls list</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

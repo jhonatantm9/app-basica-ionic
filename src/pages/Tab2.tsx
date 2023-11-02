@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonButton, IonCardSubtitle } from '@ionic/react';
 import './Tab2.css';
 import { Pokemon } from '../models/pokemon.model';
 
@@ -32,7 +32,7 @@ const Tab2: React.FC = () => {
     <IonPage >
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Elige tu pokemon aleatorio</IonTitle>
+          <IonTitle>Select random pokemon</IonTitle>
         </IonToolbar>
       </IonHeader>
       <div className='container'>
@@ -42,17 +42,18 @@ const Tab2: React.FC = () => {
               <img src={pokemon.image} alt="Pokemon image" />
               <IonCardHeader>
                 <IonCardTitle>{pokemon.name}</IonCardTitle>
+                <IonCardSubtitle>Pokemon type(s): {pokemon.types.join(', ')}</IonCardSubtitle>
               </IonCardHeader>
             </IonCard>
           ) : (
-            <IonCard>
+            <IonCard className='icon-card'>
               <IonCardHeader>
-                <IonCardTitle>Seleccione un pokemon</IonCardTitle>
+                <IonCardTitle>Select one pokemon</IonCardTitle>
               </IonCardHeader>
             </IonCard>
           )
         }
-        <IonButton onClick={() => getRandomPokemon().then((pokemon) => setPokemon(pokemon))}>Random pokemon</IonButton>
+        <IonButton onClick={() => getRandomPokemon().then((pokemon) => setPokemon(pokemon))}>Pick one</IonButton>
       </div>
     </IonPage>
   );
